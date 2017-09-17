@@ -19,11 +19,12 @@ class ContactsController < ApplicationController
 
     @contact = Contact.find(params[:id])
     @contact.contact!
+    redirect_to root_path
 
-    respond_to do |format|
-      format.html
-      format.js { render 'update_last_contacted_on.js.erb'}
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.js { render 'update_last_contacted_on.js.erb'}
+    # end
   end
 
 

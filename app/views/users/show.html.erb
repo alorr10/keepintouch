@@ -8,6 +8,7 @@
         <span class='name'> <%= c.name %> </span>
         <%= should_contact(c) %>
         <span class='contact-button'> <%= link_to "Contact", contact(c) %> </span>
+        <span class='contacted'> <%= link_to "I did it!", update_contacted_at_for_path(c), method: :patch %> </span>
       </div>
     <% end %>
   </div>

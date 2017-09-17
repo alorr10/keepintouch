@@ -25,5 +25,6 @@ module ContactsHelper
       when "Other"
         link = "https://www.whatsapp.com/"
       end
+      return link
     end
   end
