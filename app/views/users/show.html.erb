@@ -1,0 +1,6 @@
+<h1> Your contacts </h1>
+<div class='add-new-contact'>
+  <%= link_to "Add a new contact", new_contact_path(@user) %>
+</div>
+
+<% @user.contacts.each do |c| %>

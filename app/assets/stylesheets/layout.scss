@@ -1,0 +1,40 @@
+@import "colors";
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  height: 100px;
+  background-color: $header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: avenir;
+  font-size: 24px;
+
+   a {
+    text-decoration: underline;
+    color: black;
+
+    &:hover {
+      background-color: white;
+    }
+   }
+
+  .account, .signin {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 1vw;
+  }
+
+  .signout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 1vw;
+  }
+
+}
