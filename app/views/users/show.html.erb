@@ -7,9 +7,12 @@
       <div class="contact">
         <span class='name'> <%= c.name %> </span>
         <%= should_contact(c) %>
-        <a href= <%= contact(c) %>><span class='contact-button'> <%= link_to "Contact", update_contacted_at_for_path(c), method: :patch, remote: true %> </span></a>
+        <span class='contact-button'> <%= link_to "Contact", contact(c) %> </span>
       </div>
     <% end %>
   </div>
 </div>
 
+
+
+<% # <a href= <%= contact(c) %>><span class='contact-button'> <%= link_to "Contact", update_contacted_at_for_path(c), method: :patch, remote: true %> </span></a> %>
