@@ -11,7 +11,7 @@
     </div>
 
     <div class='main'>
-      <h1> Keep In Touch </h1>
+      <h1> <%= link_to "Keep In Touch", root_url %> </h1>
     </div>
 
     <div class='signout'>
@@ -20,7 +20,7 @@
 
   <% else %>
 
-    <h1> Keep In Touch </h1>
+    <h1> <%= link_to "Keep In Touch", root_url %> </h1>
 
     <div class='signin'>
       <%= link_to "Sign In", new_user_session_path %>

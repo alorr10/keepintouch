@@ -15,6 +15,18 @@ class ContactsController < ApplicationController
     end
   end
 
+  def update_contacted_at
+
+    @contact = Contact.find(params[:id])
+    @contact.contact!
+
+    respond_to do |format|
+      format.html
+      format.js { render 'update_last_contacted_on.js.erb'}
+    end
+  end
+
+
   private
 
     def contact_params

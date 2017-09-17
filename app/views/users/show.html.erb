@@ -1,6 +1,15 @@
-<h1> Your contacts </h1>
+<h1 id='yourcontacts'> Your contacts </h1>
 <div class='add-new-contact'>
   <%= link_to "Add a new contact", new_contact_path(@user) %>
 </div>
+  <div class="contacts">
+    <% @user.contacts.each do |c| %>
+      <div class="contact">
+        <span class='name'> <%= c.name %> </span>
+        <%= should_contact(c) %>
+        <a href= <%= contact(c) %>><span class='contact-button'> <%= link_to "Contact", update_contacted_at_for_path(c), method: :patch, remote: true %> </span></a>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<% @user.contacts.each do |c| %>
