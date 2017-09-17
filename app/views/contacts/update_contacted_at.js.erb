@@ -1,0 +1,3 @@
+$(".contact<%= @contact.id%>").html("<%= should_contact(@contact) %>");
+$(".contact<%= @contact.id%>").css("background-color", "#a5ffc6");
+window.location.href = "<%= contact(@contact) %>";

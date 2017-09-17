@@ -1,12 +1,12 @@
 class ContactsController < ApplicationController
 
   def new
-    @user = User.find(params[:id])
-    @contact = Contact.new(user: @user)
+    @user = User.find(params[:user_id])
+    @contact = Contact.new
   end
 
   def create
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @contact = @user.contacts.new(contact_params)
     if @contact.save
       redirect_to user_path(@user), notice: "Contact created!"
@@ -16,16 +16,35 @@ class ContactsController < ApplicationController
   end
 
   def update_contacted_at
-
     @contact = Contact.find(params[:id])
     @contact.contact!
-    redirect_to root_path
 
-    # respond_to do |format|
-    #   format.html
-    #   format.js { render 'update_last_contacted_on.js.erb'}
-    # end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
+
+  def show
+    @contact = Contact.find(params[:id])
+    @user = User.find(params[:user_id])
+  end
+
+  def edit
+    @user = User.find(params[:user_id])
+    @contact = Contact.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @contact = Contact.find(params[:id])
+    if @contact.update(contact_params)
+      redirect_to root_url
+    else
+      render 'edit'
+    end
+  end
+
 
 
   private

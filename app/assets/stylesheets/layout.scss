@@ -6,40 +6,10 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: $font;
+  background-color: $background-color;
 }
 
-.header {
-  height: 100px;
-  background-color: $header;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: avenir;
-  font-size: 24px;
 
-   a {
-    text-decoration: underline;
-    color: black;
-
-    &:hover {
-      background-color: white;
-    }
-   }
-
-  .account, .signin {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding-left: 1vw;
-  }
-
-  .signout {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: 1vw;
-  }
-}
 
 #yourcontacts, .add-new-contact {
   margin: 20px 0 0 20px;
@@ -49,17 +19,17 @@ body {
 .contacts {
   margin: 20px 0 0 20px;
   padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
+  table {
+    width: 50%;
 
-  .contact {
-    padding: 10px 0;
-  }
+    th {
+      text-align: left;
+    }
 
-  .name {
-    margin-right: 20px;
+    td, tr {
+      padding: 20px 0;
+    }
   }
 
   .should-contact {
@@ -71,12 +41,5 @@ body {
     background-color: $shouldnt-contact;
     padding: 4px;
 
-  }
-  .contact-button {
-    margin-left: 20px;
-  }
-
-  .contacted{
-    margin-left: 20px;
   }
 }

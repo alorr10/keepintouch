@@ -1,19 +1,27 @@
 <h1 id='yourcontacts'> Your contacts </h1>
 <div class='add-new-contact'>
-  <%= link_to "Add a new contact", new_contact_path(@user) %>
+  <%= link_to "Add a new contact", new_user_contact_path(@user) %>
 </div>
   <div class="contacts">
-    <% @user.contacts.each do |c| %>
-      <div class="contact">
-        <span class='name'> <%= c.name %> </span>
-        <%= should_contact(c) %>
-        <span class='contact-button'> <%= link_to "Contact", contact(c) %> </span>
-        <span class='contacted'> <%= link_to "I did it!", update_contacted_at_for_path(c), method: :patch %> </span>
-      </div>
-    <% end %>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Last Contacted</th>
+        <th>Hit them up!</th>
+      </tr>
+      <% @user.contacts.each do |c| %>
+        <tr>
+          <td>
+            <span class='name'> <%= link_to c.name, user_contact_path(@user, c) %> </span>
+          </td>
+          <td>
+            <%= should_contact(c) %>
+          </td>
+          <td>
+            <span class='contact-button'> <%= link_to "Contact", update_contacted_at_for_path(c), method: :patch, remote: true %> </span>
+          </td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </div>
-
-
-
-<% # <a href= <%= contact(c) %>><span class='contact-button'> <%= link_to "Contact", update_contacted_at_for_path(c), method: :patch, remote: true %> </span></a> %>

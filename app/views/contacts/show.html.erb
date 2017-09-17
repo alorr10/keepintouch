@@ -1,0 +1,8 @@
+<ul>
+  <li> <%= @contact.name %> </li>
+  <li> <%= @contact.contact_method %> </li>
+  <li> <%= @contact.last_contacted_on %> </li>
+  <li> <%= @contact.handle %> </li>
+  <li><%= @contact.phone if !@contact.phone.empty? %> </li>
+</ul>
+<%= link_to "Edit Contact", edit_user_contact_path(@user.id, @contact) %>

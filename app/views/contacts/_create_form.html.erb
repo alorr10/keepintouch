@@ -1,0 +1,31 @@
+<%= form_for(@contact, url: user_contacts_path(@user)) do |f| %>
+  <%= render 'layouts/errors', object: f.object %>
+  <fieldset>
+    <ol>
+      <li class="required">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true %>
+      </li>
+      <li class="required">
+        <%= f.label :contact_method %>
+        <%= f.select :contact_method, Contact::CONTACT_METHODS, prompt: "Pick one" %>
+      </li>
+      <li class='required'>
+        <%= f.label :last_contact_on %>
+        <%= f.date_select :last_contacted_on %>
+      </li>
+      <li>
+        <%= f.label :handle %>
+        <%= f.text_field :handle %>
+      </li>
+      <li>
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone %>
+      </li>
+    </ol>
+    <p>
+      <%= f.submit %>
+      <%= link_to "Cancel", user_path(@user), class: 'button' %>
+    </p>
+  </fieldset>
+<% end %>
