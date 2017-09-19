@@ -1,10 +1,10 @@
 module ContactsHelper
 
   def should_contact(contact)
-    if contact.last_contacted_on < 7.days.ago
-      "<span class='should-contact contact#{contact.id}'> #{time_ago_in_words(contact.last_contacted_on)} ago </span>".html_safe
+    if contact.last_contacted_on < contact.time_between_contact.days.ago
+      "<span class='should-contact contact#{contact.id}'>#{time_ago_in_words(contact.last_contacted_on)} ago </span>".html_safe
     else
-      "<span class='shouldnt-contact contact#{contact.id}'> #{time_ago_in_words(contact.last_contacted_on)} ago</span>".html_safe
+      "<span class='shouldnt-contact contact#{contact.id}'>#{time_ago_in_words(contact.last_contacted_on)} ago</span>".html_safe
     end
   end
 

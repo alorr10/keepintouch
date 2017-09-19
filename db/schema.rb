@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917001411) do
+ActiveRecord::Schema.define(version: 20170919033856) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170917001411) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "last_contacted_on"
+    t.integer "time_between_contact", default: 7
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 

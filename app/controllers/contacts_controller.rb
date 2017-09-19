@@ -17,6 +17,7 @@ class ContactsController < ApplicationController
 
   def update_contacted_at
     @contact = Contact.find(params[:id])
+    @user = @contact.user
     @contact.contact!
 
     respond_to do |format|
@@ -50,7 +51,7 @@ class ContactsController < ApplicationController
   private
 
     def contact_params
-      params.require(:contact).permit(:name, :phone, :contact_method, :handle, :last_contacted_on)
+      params.require(:contact).permit(:name, :phone, :contact_method, :handle, :last_contacted_on, :time_between_contact)
     end
 
 end

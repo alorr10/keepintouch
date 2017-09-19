@@ -1,31 +1,51 @@
-<%= form_for(@contact, url: user_contacts_path(@user)) do |f| %>
-  <%= render 'layouts/errors', object: f.object %>
-  <fieldset>
-    <ol>
-      <li class="required">
-        <%= f.label :name %>
-        <%= f.text_field :name, autofocus: true %>
-      </li>
-      <li class="required">
-        <%= f.label :contact_method %>
-        <%= f.select :contact_method, Contact::CONTACT_METHODS, prompt: "Pick one" %>
-      </li>
-      <li class='required'>
-        <%= f.label :last_contact_on %>
-        <%= f.date_select :last_contacted_on %>
-      </li>
-      <li>
-        <%= f.label :handle %>
-        <%= f.text_field :handle %>
-      </li>
-      <li>
-        <%= f.label :phone_number %>
-        <%= f.text_field :phone %>
-      </li>
-    </ol>
-    <p>
-      <%= f.submit %>
-      <%= link_to "Cancel", user_path(@user), class: 'button' %>
-    </p>
-  </fieldset>
-<% end %>
+<div class='form-wrapper'>
+  <div class="person-box">
+    <%= image_tag("face.svg", class: "face-pic") %>
+    <h2> Let's create a contact.</h2>
+  </div>
+  <div class='form'>
+
+    <%= form_for(@contact, url: user_contacts_path(@user)) do |f| %>
+      <%= render 'layouts/errors', object: f.object %>
+        <ul>
+
+          <li class="required name">
+            <%= f.label :name %>
+            <%= f.text_field :name, autofocus: true %>
+          </li>
+
+          <li class="required contact-method">
+            <%= f.label :contact_method %>
+            <%= f.select :contact_method, Contact::CONTACT_METHODS, prompt: "Pick one" %>
+          </li>
+
+          <li class='required last'>
+            <%= f.label :last_contacted_on %>
+            <%= f.date_select :last_contacted_on %>
+          </li>
+
+          <li class='required often'>
+            <%= f.label :how_often_do_you_want_to_contact_them? %>
+            Every <%= f.number_field(:time_between_contact, in: 1..100) %> days
+          </li>
+
+          <li class="handle">
+            <%= f.label :handle %>
+            <%= f.text_field :handle %>
+          </li>
+
+          <li class="phone">
+            <%= f.label :phone_number %>
+            <%= f.text_field :phone %>
+          </li>
+
+        </ul>
+        <div class="actions">
+          <%= f.submit class: "btn-3d" %>
+          <%= link_to "Cancel", user_path(@user), class: 'button' %>
+        </div>
+    <% end %>
+
+  </div>
+
+</div>
