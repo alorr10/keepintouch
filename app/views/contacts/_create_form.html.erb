@@ -16,7 +16,7 @@
 
           <li class="required contact-method">
             <%= f.label :contact_method %>
-            <%= f.select :contact_method, Contact::CONTACT_METHODS, prompt: "Pick one" %>
+            <%= f.select :contact_method, Contact::CONTACT_METHODS, prompt: "Pick one", method: :patch, remote: true %>
           </li>
 
           <li class='required last'>

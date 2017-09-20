@@ -16,3 +16,14 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).on("change", "select", function(e){
+  $(this).attr("data-option-value", $(this).val());
+  if (($(this).val() == "Phone") || ($(this).val() == "Facetime") || ($(this).val() == "What's App") || ($(this).val() == "Text")) {
+    $(".handle").hide();
+    $(".phone").show();
+  }
+  else {
+    $(".phone").hide();
+    $(".handle").show();
+  }
+});

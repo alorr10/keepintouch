@@ -3,6 +3,10 @@ class ContactsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @contact = Contact.new
+    respond_to do |format|
+      format.html
+      format.js { }
+    end
   end
 
   def create
@@ -22,6 +26,12 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.js
+    end
+  end
+
+  def update_form
+     respond_to do |format|
       format.js
     end
   end

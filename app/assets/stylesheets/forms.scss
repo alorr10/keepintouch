@@ -107,12 +107,18 @@
   ul{
     display: flex;
     flex-direction: column;
+    max-width: 30vw;
   }
 
   li {
+    max-width: 30vw;
     padding-top: 25px;
     display: flex;
     justify-content: space-between;
+  }
+
+  textarea {
+    resize: none;
   }
 }
 
