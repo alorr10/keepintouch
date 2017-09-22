@@ -9,19 +9,21 @@
         <th>Last Contacted</th>
         <th>Hit them up!</th>
       </tr>
-      <% @user.contacts.each do |c| %>
-        <tr>
-          <td>
-            <span class='name'> <%= link_to c.name, user_contact_path(@user, c) %> </span>
-          </td>
-          <td class='last_contacted'>
-            <%= should_contact(c) %>
-          </td>
-          <td>
-            <span class='contact-button'> <%= link_to "Contact", update_contacted_at_for_path(c), method: :patch, remote: true %> </span>
-          </td>
-        </tr>
-      <% end %>
+      <div class='contacts-list'>
+        <% @user.contacts.each do |c| %>
+          <tr>
+            <td>
+              <span class='name'> <%= link_to c.name, user_contact_path(@user, c) %> </span>
+            </td>
+            <td class='last_contacted'>
+              <%= should_contact(c) %>
+            </td>
+            <td>
+              <span class='contact-button'> <%= link_to "Contact", update_contacted_at_for_path(c), method: :patch, remote: true %> </span>
+            </td>
+          </tr>
+        <% end %>
+      </div>
     </table>
   </div>
 </div>

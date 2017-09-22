@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <span class='name'> <%= link_to @contact.name, user_contact_path(@contact.user, @contact) %> </span>
+  </td>
+  <td class='last_contacted'>
+    <%= should_contact(@contact) %>
+  </td>
+  <td>
+    <span class='contact-button'> <%= link_to "Contact", update_contacted_at_for_path(@contact), method: :patch, remote: true %> </span>
+  </td>
+</tr>

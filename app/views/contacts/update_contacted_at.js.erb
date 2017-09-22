@@ -1,31 +1,8 @@
 $(".contact<%= @contact.id%>").html("<%= should_contact(@contact) %>");
 $(".contact<%= @contact.id%>").css("background-color", "#a5ffc6");
-alert("starting");
-<% times = [] %>
-<% @user.contacts.each do |c| %>
-  <% times.append(c.last_contacted_on) %>
-<% end %>
-alert("<%= times.sort %>");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 window.location.href = "<%= contact(@contact) %>";
 
+<% @user.contacts.order("last_contacted_on desc").each do |c| %>
+  $(".contacts-list").replace_with("<%= j render c %>");
+<% end %>
