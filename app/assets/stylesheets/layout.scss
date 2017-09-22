@@ -9,8 +9,6 @@ body {
   background-color: $background-color;
 }
 
-
-
 #yourcontacts, .add-new-contact {
   margin: 20px 0 0 20px;
 }
@@ -41,5 +39,19 @@ body {
     background-color: $shouldnt-contact;
     padding: 4px;
 
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contacts {
+    width: 100%;
+
+    table {
+      width: 100%;
+      tr {
+        height: 50vh;
+        width: 33vw;
+      }
+    }
   }
 }

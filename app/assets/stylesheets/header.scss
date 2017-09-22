@@ -32,5 +32,51 @@ $font: avenir;
     flex-direction: column;
     justify-content: center;
     padding-right: 1vw;
+
+  }
+
+  .account-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+  height: 25vh;
+  background-color: $header;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: avenir;
+
+   a {
+    text-decoration: underline;
+    color: black;
+
+      &:hover {
+        background-color: white;
+      }
+    }
+
+    h1 {
+      padding-left: 5vw;
+    }
+
+    .account, .signin, .signout {
+      display: none;
+    }
+
+    .account-mobile {
+      display: flex;
+      flex-direction: column;
+      padding: 0 5vw 0 0;
+      font-size: 20px;
+
+      a {
+        padding-top: 2vh;
+
+      }
+    }
   }
 }
