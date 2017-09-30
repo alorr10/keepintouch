@@ -9,49 +9,48 @@ body {
   background-color: $background-color;
 }
 
-#yourcontacts, .add-new-contact {
-  margin: 20px 0 0 20px;
-}
-
-
-.contacts {
-  margin: 20px 0 0 20px;
-  padding: 20px 0;
-
-  table {
-    width: 50%;
-
-    th {
-      text-align: left;
-    }
-
-    td, tr {
-      padding: 20px 0;
-    }
-  }
-
-  .should-contact {
-    color: black;
-    background-color: $should-contact;
-    padding: 4px;
-  }
-  .shouldnt-contact {
-    background-color: $shouldnt-contact;
-    padding: 4px;
-
-  }
-}
-
 @media screen and (max-width: 600px) {
+
+  .headers{
+    width: 100%;
+    margin-top: 50px;
+    box-sizing: border-box;
+    padding: 20px 10px 0;
+    tr{
+      display: flex;
+      justify-content: space-around;
+    }
+  }
   .contacts {
     width: 100%;
+    box-sizing: border-box;
+    padding: 20px 5px 0;
 
     table {
       width: 100%;
       tr {
-        height: 50vh;
+        height: 25vh;
+      }
+      td {
         width: 33vw;
+        text-align: center;
       }
     }
   }
 }
+
+#yourcontacts, .add-new-contact {
+  margin: 20px 0 0 20px;
+}
+
+.should-contact {
+  color: black;
+  background-color: $should-contact;
+  padding: 4px;
+}
+.shouldnt-contact {
+  background-color: $shouldnt-contact;
+  padding: 4px;
+
+}
+

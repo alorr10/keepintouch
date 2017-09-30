@@ -2,13 +2,15 @@
 <div class='add-new-contact'>
   <%= link_to "Add a new contact", new_user_contact_path(@user) %>
 </div>
+  <table class='headers'>
+    <tr class='headers-row'>
+      <th>Name</th>
+      <th>Last Contacted</th>
+      <th>Hit them up!</th>
+    </tr>
+  </table>
   <div class="contacts">
     <table>
-      <tr>
-        <th>Name</th>
-        <th>Last Contacted</th>
-        <th>Hit them up!</th>
-      </tr>
       <div class='contacts-list'>
         <% @user.contacts.each do |c| %>
           <tr>
