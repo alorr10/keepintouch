@@ -14,6 +14,7 @@ class ContactsController < ApplicationController
     @contact = @user.contacts.new(contact_params)
     if @contact.save
       redirect_to user_path(@user), notice: "Contact created!"
+      Pusher['private-'+params[:user_id]].trigger('new_message', {:from => current_user.name, :subject => "Alec"})
     else
       render 'new'
     end

@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   patch "/update_contacted_at/:id" => "contacts#update_contacted_at", as: :update_contacted_at_for
   post '/update_form' => 'contacts#update_form'
+  post 'pusher/auth'
 end
