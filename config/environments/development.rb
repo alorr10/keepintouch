@@ -1,5 +1,10 @@
+require 'pusher'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+
+  Pusher.app_id = "408196"
+  Pusher.key = "f3d1883fefaa38c1b888"
+  Pusher.secret = "24bdcbc1c571c209f450"
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
