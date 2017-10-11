@@ -54,3 +54,34 @@ body {
 
 }
 
+@media screen and (max-width: 3000px) {
+    .contacts {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 20px 5px 0;
+
+      table {
+        width: 100%;
+        tr {
+          height: 5vh;
+        }
+        td {
+          width: 33vw;
+          text-align: center;
+        }
+      }
+    }
+
+    .headers{
+    width: 50%;
+    margin-top: 50px;
+    box-sizing: border-box;
+    padding: 20px 10px 0;
+    tr{
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
+

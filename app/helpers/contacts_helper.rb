@@ -27,4 +27,8 @@ module ContactsHelper
       end
       return link
     end
+
+    def i_did_it(c)
+      c.contact!
+    end
   end
